@@ -1,6 +1,9 @@
-# DevOps_3
-Лабораторная работа №3
+# Лабораторная работа №3
 ---
+# Часть 1
+---
+Задча: настроить nginx с https сертификатом, принудительно перенаправлять запросы с http на https, использовать alias и настроить виртуальные хосты. 
+
 В ходе работы были выполнены слежующие шаги: 
 1. Установлен ngnix (`brew install nginx`)
 2. Создана структура проекта
@@ -13,8 +16,32 @@
 
 4. Установлен  **mkcert** для локальных HTTPS-сертификатов. **mkcert** создает локально доверенные сертификаты.
 
-5. Созданы конфиги сайтов 
+5. Созданы конфиги сайтов:
 
+Использован alias:
+
+```
+location /files/ {
+    alias /Users/arina/nginx-lab/pet1/assets/;
+    autoindex on;
+}
+```
+
+Настроены виртуальные хосты:
+
+```
+server {
+    listen 80;
+    server_name pet1.local;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name pet1.local;
+    ...
+}
+```
 
 Итого: 
 
@@ -22,4 +49,4 @@
 
 <img width="338" height="262" alt="image" src="https://github.com/user-attachments/assets/541cdf33-e7c9-4b59-8e52-0fb41dc88359" />
 
-Оба сайта работают на хосте https://
+
