@@ -42,10 +42,13 @@ server {
 }
 ```
 
-Итого: 
+Результаты работы: 
 
 <img width="464" height="242" alt="image" src="https://github.com/user-attachments/assets/64dc7f24-65b0-4ca7-8661-8d66ce8f25a5" />
 
 <img width="338" height="262" alt="image" src="https://github.com/user-attachments/assets/541cdf33-e7c9-4b59-8e52-0fb41dc88359" />
+
+# Часть 2
+
 
 
